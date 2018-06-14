@@ -1,13 +1,18 @@
 <template>
   <div id="app">
-    <img src="./assets/logo.png">
-    <router-view/>
+    <v-app>
+      <v-content app wrap>
+        <EmailSubscribe></EmailSubscribe>
+        </v-content>
+    </v-app>
   </div>
 </template>
 
 <script>
+import EmailSubscribe from './components/EmailSubscribe'
 export default {
-  name: 'App'
+  name: 'App',
+  components: {EmailSubscribe}
 }
 </script>
 
