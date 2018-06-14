@@ -1,20 +1,14 @@
 <template>
-  <v-card color="grey lighten-3">
+  <div class ="subscribe">
   <v-container grid-list>
     <v-layout row wrap>
       <v-flex md12 class="heading">
-        <v-card class="email-card">
-          <v-card-title primary-title class="card-title">
-            <div>
-              <h1>Would You Like Us To Contact You with Special Offers and Business News?</h1>
-            </div>
-          </v-card-title>
-        </v-card>
+        <div class="email-card">
+              <h2 class="card-title">Would You Like Us To Contact You with Special Offers and Business News?</h2>
+        </div>
       </v-flex>
     </v-layout>
     <v-layout row wrap class="contact-elements">
-      <v-flex xs2>
-      </v-flex>
         <v-flex xs12 md4 class="contact-email">
           <v-subheader class="subHeading"><h3>Email Address</h3></v-subheader>
         <v-text-field class="field-spaces"
@@ -32,13 +26,11 @@
     </v-layout>
     <v-layout row justify-center>
       <v-flex xs2>
-        <button class="submit">
-          <img src="../assets/Button3.png" />
-        </button>
+          <img class="submit" src='../assets/Button3.png' />
       </v-flex>
     </v-layout>
   </v-container>
-    </v-card>
+    </div>
 </template>
 
 <script>
@@ -49,17 +41,17 @@ export default{
   })
 }
 </script>
-<style scoped>
-  .contact-heading{
-  }
+<style>
   .contact-elements{
-    .margin-top:40px;
+    margin-top:40px;
   }
   .contact-email{
     margin-right:40px;
+    margin-left:60px;
   }
   .contact-industry{
     margin-left:40px;
+    padding-left: 40px;
   }
 .submit{
   height: 50px;
@@ -71,22 +63,31 @@ export default{
     padding: 30px;
   }
   .email-card{
-    margin-left:70px;
-    margin-right:70px;
+    margin-left: 220px;
+    margin-right: 220px;
+    background-color: white;
   }
   .field-spaces{
     width: 434px;
   }
-  .subHeading{
+  .subheader{
     margin-bottom: 0px!important;
     font-weight: 400;
-    padding:0px;
-    color: #000000;
+    font-size: 20px;
+    padding: 0px;
+    font-family: 'Open Sans Bold';
   }
   .card-title{
     padding-top: 15px;
     padding-bottom: 15px;
     margin-left: 40px;
     margin-right: 40px;
+    font-family: 'Open Sans Bold';
+    font-size: 32px;
+  }
+  .subscribe{
+    background-color: #EEEEEE;
+    margin-left: 20px;
+    margin-right: 20px;
   }
 </style>
