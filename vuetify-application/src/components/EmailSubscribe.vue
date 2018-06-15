@@ -4,30 +4,45 @@
     <v-layout row wrap>
       <v-flex md12 class="heading">
         <div class="email-card">
-              <h2 class="card-title">Would You Like Us To Contact You with Special Offers and Business News?</h2>
+              <h3 class="card-title">Would You Like Us To Contact You with Special Offers and Business News?</h3>
         </div>
       </v-flex>
     </v-layout>
     <v-layout row wrap class="contact-elements">
         <v-flex xs12 md4 class="contact-email">
-          <v-subheader class="subHeading"><h3>Email Address</h3></v-subheader>
+          <v-subheader class="subHeading"><h4>Email Address</h4></v-subheader>
         <v-text-field class="field-spaces"
           v-model="email"
           label="Your E-mail"
         ></v-text-field>
       </v-flex>
         <v-flex xs12 md4 class="contact-industry">
-          <v-subheader class="subHeading"><h3>Select your Industry</h3></v-subheader>
+          <v-subheader class="subHeading"><h4>Select your Industry</h4></v-subheader>
           <v-select class="field-spaces"
-            label="Select"
-            single-line
+                    :items="industries"
+                    v-model="industry"
+                    label="Select"
+                    single-line
           ></v-select>
         </v-flex>
     </v-layout>
     <v-layout row justify-center>
       <v-flex xs2>
-          <img class="submit" src='../assets/Button3.png' />
+          <img class="submit" src='../assets/Button3.png' @click.stop="dialog3 = true"/>
       </v-flex>
+      <v-dialog v-model="dialog3" max-width="500px">
+        <v-card>
+          <v-card-title>
+            <span>Success</span>
+          </v-card-title>
+          <v-card-text>
+            Subscribed Successfully!
+          </v-card-text>
+          <v-card-actions>
+            <v-btn color="primary" flat @click.stop="dialog3=false">Close</v-btn>
+          </v-card-actions>
+        </v-card>
+      </v-dialog>
     </v-layout>
   </v-container>
     </div>
@@ -36,8 +51,12 @@
 <script>
 export default{
   data: () => ({
-    valid: true,
-    email: ''
+    email: '',
+    industries: [
+      'Industry 1', 'Industry 2', 'Industry 3', 'Industry 4', 'Industry 5'
+    ],
+    industry: null,
+    dialog3: false
   })
 }
 </script>
@@ -58,6 +77,11 @@ export default{
   width: 180px;
   margin-bottom: 20px;
   margin-top: 40px;
+  text-shadow: 0px 1px 2px;
+  outline: 1px #333333;
+  font-family: 'Open Sans Bold';
+  color: #333333;
+  font-size: 21px;
   }
   .heading{
     padding: 30px;
@@ -70,20 +94,26 @@ export default{
   .field-spaces{
     width: 434px;
   }
-  .subheader{
+  .subHeading{
     margin-bottom: 0px!important;
-    font-weight: 400;
-    font-size: 20px;
     padding: 0px;
     font-family: 'Open Sans Bold';
+  }
+  h3{
+    font-size: 32px;
+    font-family: 'Open Sans ExtraBold';
+    color:#333333;
+  }
+  h4{
+    font-family: 'Open Sans ExtraBold';
+    font-size: 28px;
+    color: #333333;
   }
   .card-title{
     padding-top: 15px;
     padding-bottom: 15px;
     margin-left: 40px;
     margin-right: 40px;
-    font-family: 'Open Sans Bold';
-    font-size: 32px;
   }
   .subscribe{
     background-color: #EEEEEE;
